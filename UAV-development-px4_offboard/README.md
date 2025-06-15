@@ -29,7 +29,7 @@ Replace `dds_topics.yaml` in `~/PX4-Autopilot/src/modules/uxrce_dds_client/dds_t
 ## PX4-ROS2
 Clone our packages to use px4_offboard control and optical_flow node
 ```shell
-git clone https://github.com/Lephap129/UAV-development.git -b px4_offboard
+git clone https://github.com/NguyenTran1812/ROS_development.git -b px4_offboard
 cd UAV-development/
 colcon build
 ```
