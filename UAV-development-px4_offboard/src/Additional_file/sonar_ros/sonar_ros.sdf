@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="sonar_ros">
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.000000000000001</mass>
+        <inertia>
+          <ixx>2.08333333e-7</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.08333333e-7</iyy>
+          <iyz>0</iyz>
+          <izz>4.16666667e-8</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.005 0.015 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <sensor name='sonar_ros' type='ray'>
+        <always_on>1</always_on>
+        <visualize>1</visualize>
+        <update_rate>30</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.12</min_angle>
+              <max_angle>0.12</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.12</min_angle>
+              <max_angle>0.12</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>50</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name='sonar_ros' filename='libgazebo_ros_ray_sensor.so'>
+          <ros>
+            <namespace>/UAV</namespace>
+          </ros>
+          <frame_name>/UAV/sonar</frame_name>
+          <output_type>sensor_msgs/Range</output_type>
+          <radiation_type>ultrasound</radiation_type>
+        </plugin>
+        <pose>0 0 0 0 1.57079 0</pose>
+      </sensor>
+    </link>
+  </model>
+</sdf>

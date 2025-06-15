@@ -1,0 +1,89 @@
+#!/bin/sh
+#
+# @name 3DR Iris Quadrotor SITL (Optical Flow)
+#
+# @type Quadrotor Wide
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+
+param set-default CA_AIRFRAME 0
+
+param set-default CA_ROTOR_COUNT 4
+param set-default CA_ROTOR0_PX 0.1515
+param set-default CA_ROTOR0_PY 0.245
+param set-default CA_ROTOR0_KM 0.05
+param set-default CA_ROTOR1_PX -0.1515
+param set-default CA_ROTOR1_PY -0.1875
+param set-default CA_ROTOR1_KM 0.05
+param set-default CA_ROTOR2_PX 0.1515
+param set-default CA_ROTOR2_PY -0.245
+param set-default CA_ROTOR2_KM -0.05
+param set-default CA_ROTOR3_PX -0.1515
+param set-default CA_ROTOR3_PY 0.1875
+param set-default CA_ROTOR3_KM -0.05
+
+param set-default PWM_MAIN_FUNC1 101
+param set-default PWM_MAIN_FUNC2 102
+param set-default PWM_MAIN_FUNC3 103
+param set-default PWM_MAIN_FUNC4 104
+
+
+# # For GPS
+# # param set-default COM_ARM_WO_GPS 1
+# # param set-default NAV_RCL_ACT 0
+# param set-default EKF2_HGT_REF 1
+# param set-default EKF2_GPS_CTRL 7
+# param set-default EKF2_BARO_CTRL 1
+# param set-default EKF2_RNG_CTRL 1
+# param set-default EKF2_OF_CTRL 1
+
+# # param set COM_POS_FS_DELAY 3.0  # Failsafe delay in seconds
+# # param set COM_POS_FS_EPH 5.0    # Position estimation accuracy threshold
+
+
+
+# # LPE: Flow-only mode
+# param set-default LPE_FUSION 145
+# param set-default LPE_FAKE_ORIGIN 0
+
+# param set-default MPC_ALT_MODE 2
+
+# param set-default SENS_FLOW_ROT 0
+# param set-default SENS_FLOW_MINHGT 0.1
+# param set-default SENS_FLOW_MAXHGT 10.0
+# param set-default SENS_FLOW_MAXR 1.5
+
+
+# For Optical_flow
+param set-default COM_ARM_WO_GPS 1
+param set-default NAV_RCL_ACT 0
+param set-default EKF2_HGT_REF 2
+param set-default EKF2_GPS_CTRL 1
+param set-default EKF2_BARO_CTRL 1
+param set-default EKF2_RNG_CTRL 1
+param set-default EKF2_EVP_NOISE 0.1
+param set-default EKF2_EVA_NOISE 0.1
+param set-default EKF2_OF_CTRL 1
+param set-default EKF2_OF_N_MIN 0.05
+
+# param set COM_POS_FS_DELAY 3.0  # Failsafe delay in seconds
+# param set COM_POS_FS_EPH 5.0    # Position estimation accuracy threshold
+
+
+
+# LPE: Flow-only mode
+param set-default LPE_FUSION 242
+param set-default LPE_FAKE_ORIGIN 1
+
+param set-default MPC_ALT_MODE 2
+
+
+param set-default SENS_FLOW_ROT 4
+param set-default SENS_FLOW_MINHGT 0.1
+param set-default SENS_FLOW_MAXHGT 10.0
+param set-default SENS_FLOW_MAXR 1.5
+
+
+

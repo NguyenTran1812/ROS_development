@@ -1,0 +1,35 @@
+/fmu/out/vehicle_attitude:
+  reliability: best_effort
+  history: keep_last
+  depth: 10
+
+/fmu/out/vehicle_odometry:
+  reliability: best_effort
+  history: keep_last
+  depth: 10
+
+/fmu/out/sensor_combined:
+  reliability: best_effort
+  history: keep_last
+  depth: 10
+
+/fmu/out/distance_sensor:
+  reliability: best_effort
+  history: keep_last
+  depth: 10
+
+/fmu/out/battery_status:
+  reliability: best_effort
+  history: keep_last
+  depth: 10
+
+/vehicle_height:
+  reliability: best_effort
+  history: keep_last
+  depth: 10
+
+/fmu/out/vehicle_local_position:
+  reliability: best_effort
+  history: keep_last
+  depth: 10
+
